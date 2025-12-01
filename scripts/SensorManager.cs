@@ -38,7 +38,7 @@ public class SensorManager : MonoBehaviour
 
     System.Collections.IEnumerator InitializeLocationService()
     {
-#if UNITY_ANDROID && !UNITY_EDITOR
+    #if UNITY_ANDROID && !UNITY_EDITOR
         // Solicitar permiso en tiempo de ejecución en Android
         if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
         {
@@ -52,7 +52,7 @@ public class SensorManager : MonoBehaviour
                 permissionWait += 0.5f;
             }
         }
-#endif
+    #endif
 
         if (!Input.location.isEnabledByUser)
         {
@@ -101,7 +101,5 @@ public class SensorManager : MonoBehaviour
 
     void Update()
     {
-        // Los valores de sensores se leen aquí sin logging
-        // Para ver valores, usar SensorDisplay.cs
     }
 }

@@ -12,13 +12,12 @@ public class SensorDisplay : MonoBehaviour
         Input.compass.enabled = true;
         Input.location.Start();
         
-        // Habilitar todos los sensores disponibles según el enunciado
+        // Habilitar todos los sensores disponibles
         EnableAllAvailableSensors();
     }
     
     void EnableAllAvailableSensors()
     {
-        // Usar InputSystem.devices como especifica el enunciado
         foreach (var device in InputSystem.devices)
         {
             // Habilitar todos los sensores detectados
